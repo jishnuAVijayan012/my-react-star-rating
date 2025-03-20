@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 :root {
-    --star-size: 60px;
+    --star-size: 20px;
     --star-color: #fff;
     --star-background: #fc0;
 }
@@ -20,17 +20,4 @@
     background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-body {
-    background: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-* {
-    position: relative;
-    box-sizing: border-box;
 }
