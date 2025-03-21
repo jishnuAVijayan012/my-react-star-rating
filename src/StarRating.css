@@ -1,9 +1,32 @@
-.star {
-    font-size: 2em;
-    color: #ff851b;
-    cursor: pointer;
+.rating-container {
+    display: flex;
 }
 
-.star:hover {
-    color: #ffa500;
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+    /* Default empty star color */
+}
+
+.star.filled {
+    color: #ffd700;
+    /* Filled star color */
+}
+
+.star.partial {
+    position: relative;
+    color: #ccc;
+    /* Base color for partial star */
+}
+
+.star.partial::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    /* Adjust based on the fractional part */
+    overflow: hidden;
+    color: #ffd700;
+    /* Filled part color */
 }
