@@ -1,36 +1,32 @@
-@charset "UTF-8";
-
-:root {
-    --star-size: 60px;
-    --star-color: #fff;
-    --star-background: #fc0;
-}
-
-.Stars {
-    --percent: calc(var(--rating) / 5 * 100%);
-    display: inline-block;
-    font-size: var(--star-size);
-    font-family: Times;
-    line-height: 1;
-}
-
-.Stars::before {
-    content: "★★★★★";
-    letter-spacing: 3px;
-    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-body {
-    background: #eee;
+.rating-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-* {
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+    /* Default empty star color */
+}
+
+.star.filled {
+    color: #ffd700;
+    /* Filled star color */
+}
+
+.star.partial {
     position: relative;
-    box-sizing: border-box;
+    color: #ccc;
+    /* Base color for partial star */
+}
+
+.star.partial::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    /* Adjust based on the fractional part */
+    overflow: hidden;
+    color: #ffd700;
+    /* Filled part color */
 }
